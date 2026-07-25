@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Patient Registration Voice Agent — Demo</title>
+  <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async></script>
+  <style>
+    body {
+      font-family: -apple-system, Arial, sans-serif;
+      max-width: 640px;
+      margin: 60px auto;
+      padding: 0 20px;
+      color: #222;
+    }
+    h1 { font-size: 22px; }
+    p { line-height: 1.5; color: #444; }
+    code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Patient Registration Voice Agent — Live Demo</h1>
+  <p>
+    Click the widget in the bottom-right corner to talk to the voice agent
+    directly in your browser — no phone call needed. Try registering a new
+    patient (any test details work) or ask about an existing one.
+  </p>
+  <p>
+    Registered data is stored persistently and viewable via the REST API at
+    <code>/patients</code> on this same domain.
+  </p>
+
+  <vapi-widget
+    public-key="5094d59a-5af5-4700-ace5-57e15432c570"
+    assistant-id="2db24651-0592-46e9-a932-7603b56c2fe8"
+    mode="voice"
+    theme="light"
+    size="full"
+    position="bottom-right"
+    title="Patient Registration"
+    start-button-text="Talk to Agent"
+    end-button-text="End Call">
+  </vapi-widget>
+</body>
+</html>
