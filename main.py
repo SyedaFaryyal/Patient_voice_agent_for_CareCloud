@@ -17,7 +17,7 @@ import logging
 from typing import Optional
 
 from fastapi import FastAPI, Request, HTTPException
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from pydantic import ValidationError
 
 import database as db
@@ -53,6 +53,11 @@ def format_validation_errors(e: ValidationError) -> list:
 @app.get("/")
 def health():
     return envelope(data={"status": "ok"})
+
+
+@app.get("/demo")
+def demo_widget():
+    return FileResponse("static_demo.html")
 
 
 @app.get("/patients")
